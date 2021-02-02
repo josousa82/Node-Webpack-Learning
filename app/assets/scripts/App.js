@@ -1,2 +1,1 @@
-alert("hello this is just a test.");
-console.log("test");
+alert("hello this is just a test");
