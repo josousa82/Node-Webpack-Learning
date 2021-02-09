@@ -1,11 +1,11 @@
-body {
-  color: green;
-}
+// body {
+//   color: green;
+// }
 
-$mainBlue: #2f5572;
+// $mainBlue: #2f5572;
 
-.large-hero {
-  h2 {
-    color: $mainBlue;
-  }
-}
+// .large-hero {
+//   h2 {
+//     color: $mainBlue;
+//   }
+// }
