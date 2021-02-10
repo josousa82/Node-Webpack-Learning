@@ -19,7 +19,7 @@ const CSSLoader = {
     {
       loader: MiniCssExtractPlugin.loader,
       options: {
-        publicPath: path.resolve(__dirname, "/app/assets/styles/style.css"),
+        publicPath: path.resolve(__dirname, "/app/assets/styles/*.css"),
       },
     },
     { loader: "css-loader", options: { importLoaders: 1 } },
@@ -34,20 +34,21 @@ const CSSLoader = {
   ],
 };
 
-
-// const ESLintLoader = {
-//   test: /\.js$/,
-//   enforce:'pre',
-//   exclude: /node_modules/,
-//   use:{
-//     loader: 'eslint-loader',
-//     options: {
-//       configFile: path.resolve(__dirname, './.eslintrc')
-//     }
-//   }
-// }
+const FileLoader = {
+  test: /\.(png|jpe?g|gif)$/i,
+  use: [
+    {
+      loader: "file-loader",
+      options: {
+        outputPath: "images",
+        publicPath: path.resolve(__dirname, "dist/"),
+      },
+    },
+  ],
+};
 
 module.exports = {
   JSLoader: JSLoader,
   CSSLoader: CSSLoader,
+  FileLoader: FileLoader,
 };

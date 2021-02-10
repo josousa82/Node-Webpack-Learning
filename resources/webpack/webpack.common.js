@@ -4,15 +4,23 @@ const webpack = require("webpack");
 const plugins = require("./plugins");
 
 module.exports = {
-  entry: ["/app/assets/scripts/App.js"],
+  entry: ["./src/assets/scripts/App.js"],
   module: {
-    rules: [loaders.JSLoader],
+    rules: [loaders.JSLoader, loaders.CSSLoader, loaders.FileLoader],
   },
   output: {
-    filename: "js/[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: "bundled.js",
+    path: path.resolve(__dirname, "../../dist"),
   },
-  plugins: [new webpack.ProgressPlugin(), plugins.ESLintPlugin],
+  plugins: [
+    new webpack.ProgressPlugin(),
+    plugins.CleanWebpackPlugin,
+    plugins.ESLintPlugin,
+    plugins.StyleLintPlugin,
+    plugins.MiniCssExtractPlugin,
+  ],
+
+  mode: "development",
 };
 
 // module.exports = {
