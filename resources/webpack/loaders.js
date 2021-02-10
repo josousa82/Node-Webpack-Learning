@@ -41,7 +41,7 @@ const FileLoader = {
       loader: "file-loader",
       options: {
         outputPath: "images",
-        publicPath: path.resolve(__dirname, "dist/"),
+        publicPath: path.resolve(__dirname, "../../dist"),
       },
     },
   ],

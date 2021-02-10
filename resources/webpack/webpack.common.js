@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     filename: "bundled.js",
-    path: path.resolve(__dirname, "../../dist"),
+    path: path.resolve(__dirname, "../../src"),
   },
   plugins: [
     new webpack.ProgressPlugin(),
@@ -21,6 +21,7 @@ module.exports = {
   ],
 
   mode: "development",
+
 };
 
 // module.exports = {
